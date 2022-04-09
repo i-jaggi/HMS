@@ -53,3 +53,17 @@ public class RoomDetailsServiceImpl implements IRoomDetailsService {
 	}
 
 }
+
+//@GetMapping("/all")
+//public List<Product> fetchAllProducts() {
+//	List<Product> products = productService.getAllProducts();
+//	return products;
+//}
+//
+//@PostMapping("/save")
+//public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+//	Product newProduct = productService.saveProduct(product);
+//
+//	ResponseEntity<Product> responseEntity = new ResponseEntity<>(newProduct, HttpStatus.CREATED);
+//
+//	return responseEntity;

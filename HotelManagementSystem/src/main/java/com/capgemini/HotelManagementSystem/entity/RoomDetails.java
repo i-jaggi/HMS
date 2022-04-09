@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "room_details_tbl")
 public class RoomDetails {
@@ -18,15 +20,16 @@ public class RoomDetails {
 
 	@ManyToOne
 	@JoinColumn(name = "hotel_id")
+	@JsonIgnoreProperties("rooms")
 	private Hotel hotel;
 	
 	@ManyToOne
 	private BookingDetails bookingDetails;
 	
-	private String room_no;
+	private int room_no;
 	private String room_type;
 	private double rate_per_day;
-	private boolean isAvailable;
+	private boolean is_available;
 	public int getRoom_id() {
 		return room_id;
 	}
@@ -45,10 +48,10 @@ public class RoomDetails {
 	public void setBookingDetails(BookingDetails bookingDetails) {
 		this.bookingDetails = bookingDetails;
 	}
-	public String getRoom_no() {
+	public int getRoom_no() {
 		return room_no;
 	}
-	public void setRoom_no(String room_no) {
+	public void setRoom_no(int room_no) {
 		this.room_no = room_no;
 	}
 	public String getRoom_type() {
@@ -64,10 +67,10 @@ public class RoomDetails {
 		this.rate_per_day = rate_per_day;
 	}
 	public boolean isAvailable() {
-		return isAvailable;
+		return is_available;
 	}
-	public void setAvailable(boolean isAvailable) {
-		this.isAvailable = isAvailable;
+	public void setAvailable(boolean is_available) {
+		this.is_available = is_available;
 	}
 	
 
